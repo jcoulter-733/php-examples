@@ -1,8 +1,8 @@
 <?php
 include 'database/config.php';
-include 'partials/header.php';
+include 'components/header.php';
 ?>
 Hello World
 <?php
-include 'partials/footer.php';
+include 'components/footer.php';
 ?>
