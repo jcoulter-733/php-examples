@@ -32,9 +32,9 @@ define('ROOT_DIR', '/johnc/php-examples/');
           HarmonyHub
         </button>
         <div class="sm:ml-auto text-white">
-          <a href="javscript:void(0)" class="text-white text-sm mr-1">Sign In</a>
-          /
-          <a href="javscript:void(0)" class="text-white text-sm ml-1">Sign Up</a>
+        <a href='<?= ROOT_DIR ?>pages/login.php' class="text-white text-sm mr-1">Sign In</a>
+          
+          <a href='<?= ROOT_DIR ?>pages/register.php' class="text-white text-sm ml-1">Sign Up</a>
         </div>
       </section>
 
@@ -62,13 +62,18 @@ define('ROOT_DIR', '/johnc/php-examples/');
                 class='w-36' />
               </a>
             </li>
+            
             <li
               class='max-lg:border-b max-lg:py-3 relative lg:after:absolute lg:after:bg-white lg:after:w-full lg:after:h-[2px] lg:after:block lg:after:-bottom-4 lg:after:transition-all lg:after:duration-300'>
-              <a href='<?= ROOT_DIR ?>pages/blog.php' class='text-white block text-[15px] font-medium'>Blog</a>
+              <a href='<?= ROOT_DIR ?>index.php' class='text-white block text-[15px] font-medium'>Home</a>
             </li>
             <li
               class='max-lg:border-b max-lg:py-3 relative lg:hover:after:absolute lg:after:bg-white lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:-bottom-4 lg:after:transition-all lg:after:duration-300'>
-              <a href='javascript:void(0)' class='text-white block text-[15px] font-medium'>Contact</a>
+              <a href='<?= ROOT_DIR ?>pages/blog.php' class='text-white block text-[15px] font-medium'>Blogs</a>
+            </li>
+            <li
+              class='max-lg:border-b max-lg:py-3 relative lg:hover:after:absolute lg:after:bg-white lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:-bottom-4 lg:after:transition-all lg:after:duration-300'>
+              <a href='<?= ROOT_DIR ?>pages/contact.php' class='text-white block text-[15px] font-medium'>Contact</a>
             </li>
                        
           </ul>
