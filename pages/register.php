@@ -58,7 +58,7 @@ include '../components/header.php';
 
             <div class="mt-8">
               <button type="button" class="w-full py-2.5 px-4 text-sm tracking-wider rounded bg-blue-600 hover:bg-blue-700 text-white focus:outline-none">
-                Creat an account
+                Create an account
               </button>
               <p class="text-sm mt-6 text-gray-800">Already have an account? <a href='<?= ROOT_DIR ?>pages/login.php' class="text-blue-500 font-semibold hover:underline ml-1">Login here</a></p>
             </div>

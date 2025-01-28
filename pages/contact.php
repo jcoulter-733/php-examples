@@ -4,7 +4,7 @@ include '../components/header.php';
 <div class="max-w-5xl max-lg:max-w-3xl mx-auto bg-slate-600 my-6 font-[sans-serif]">
       <div class="text-center px-6">
         <h2 class="text-white text-3xl font-bold">Contact Us</h2>
-        <p class="text-sm text-gray-500 mt-4">Have some big idea or brand to develop and need help?</p>
+        <p class="text-sm text-white mt-4">Have some big idea or brand to develop and need help?</p>
       </div>
 
       <div class="grid lg:grid-cols-3 items-start gap-4 p-2 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-lg mt-12">
@@ -158,7 +158,7 @@ include '../components/header.php';
               </div>
 
               <div class="col-span-full">
-                <h6 class="text-sm text-gray-800">Select Subject</h6>
+                <h6 class="text-sm text-white">Select Subject</h6>
                 <div class="flex max-lg:flex-col gap-6 mt-4">
                   <div class="flex items-center">
                     <input id="radio1" type="radio" name="value1" class="hidden peer" checked />
@@ -166,7 +166,7 @@ include '../components/header.php';
                       class="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden">
                       <span class="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
                     </label>
-                    <p class="text-sm text-gray-500 ml-4">General Inquiry</p>
+                    <p class="text-sm text-white ml-4">Account Enquiry</p>
                   </div>
 
                   <div class="flex items-center">
@@ -175,7 +175,7 @@ include '../components/header.php';
                       class="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden">
                       <span class="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
                     </label>
-                    <p class="text-sm text-gray-500 ml-4">Technical Support</p>
+                    <p class="text-sm text-white ml-4">Technical Support</p>
                   </div>
 
                   <div class="flex items-center">
@@ -184,14 +184,14 @@ include '../components/header.php';
                       class="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden">
                       <span class="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
                     </label>
-                    <p class="text-sm text-gray-500 ml-4">Website Feedback</p>
+                    <p class="text-sm text-white ml-4">Website Feedback</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <button type="button"
-              class="mt-12 flex items-center justify-center text-sm lg:ml-auto max-lg:w-full rounded-lg px-4 py-3 tracking-wide text-white bg-blue-600 hover:bg-blue-700">
+              class="mt-12 flex items-center justify-center text-sm lg:ml-auto max-lg:w-full rounded-lg px-4 py-3 tracking-wide text-white bg-slate-900 hover:bg-blue-600">
               <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='#fff' class="mr-2" viewBox="0 0 548.244 548.244">
                 <path fill-rule="evenodd" d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z" clip-rule="evenodd" data-original="#000000" />
               </svg>
