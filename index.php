@@ -1,6 +1,10 @@
 <?php
-//include 'database/config.php';
+include 'database/config.php';
 include 'components/header.php';
+$blog = $conn->prepare("SELECT blog_id, title, image, content, status, created_at FROM blogs WHERE status = 'published'");
+$blog->execute();
+$blog->store_result();
+$blog->bind_result($id, $title, $image_url, $content, $status, $created_at);
 ?>
 <div class="grid md:grid-cols-3 gap-6 min-h-[164px] py-12 p-16 bg-gradient-to-r from-slate-800 from-50% to-slate-600 font-sans overflow-hidden">
       <div class="md:col-span-2">
@@ -24,82 +28,27 @@ include 'components/header.php';
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-lg:max-w-3xl max-md:max-w-md mx-auto">
 
-        <!-- "Blog Post 1" -->
+        <!-- "Blog Posts" -->
+        <?php while($blog->fetch()): ?>
           <div class="bg-white cursor-pointer rounded-lg overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative group">         
-            <img src='<?= ROOT_DIR ?>assets/images/test-image.jpg' alt="Blog Post 1" class="w-full h-96 object-cover" />
+          <?php 
+          $date = new DateTime($created_at);
+          $formattedDate = $date->format("F j, Y, g:i A");
+          ?>
+          
+            <img src='<?= ROOT_DIR ?>assets/images/<?= $image_url ?>' alt="test-image.jpg" class="w-full h-96 object-cover" />
             <div class="p-6 absolute bottom-0 left-0 right-0 bg-black opacity-75">
-              <span class="text-sm block text-white mb-2">21 JAN 2025 | BY JOHN DOE</span>
-              <h3 class="text-xl font-bold text-white">Edited Blog Example</h3>
+              <span class="text-sm block text-white mb-2"><?= $formattedDate ?> | BY JOHN DOE</span>
+              <h3 class="text-xl font-bold text-white"><?= $title ?></h3>
               <div class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
-                <p class="text-white text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et tempus blandit, metus mi consectetur felis turpis vitae ligula.</p>
+                <a href="pages/blog-info.php?bid=<?=$id?>" class="text-white text-sm">Read More</a>
+                <p class="text-white text-sm"><?= $content ?></p>
               </div>
             </div>
           </div>
+          <?php endwhile; ?>
 
-          <!-- "Blog Post 2" -->
-          <div class="bg-white cursor-pointer rounded-lg overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative group">
-            <!-- <img src="https://readymadeui.com/images/food.webp" alt="Blog Post 1" class="w-full h-96 object-cover" /> -->
-            <img src='<?= ROOT_DIR ?>assets/images/test-image.jpg' alt="Blog Post 1" class="w-full h-96 object-cover" />
-            <div class="p-6 absolute bottom-0 left-0 right-0 bg-black opacity-75">
-              <span class="text-sm block text-white mb-2">21 JAN 2025 | BY JOHN DOE</span>
-              <h3 class="text-xl font-bold text-white">Edited Blog Example</h3>
-              <div class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
-                <p class="text-white text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et tempus blandit, metus mi consectetur felis turpis vitae ligula.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- "Blog Post 3" -->
-          <div class="bg-white cursor-pointer rounded-lg overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative group">
-            <!-- <img src="https://readymadeui.com/images/food.webp" alt="Blog Post 1" class="w-full h-96 object-cover" /> -->
-            <img src='<?= ROOT_DIR ?>assets/images/test-image.jpg' alt="Blog Post 1" class="w-full h-96 object-cover" />
-            <div class="p-6 absolute bottom-0 left-0 right-0 bg-black opacity-75">
-              <span class="text-sm block text-white mb-2">21 JAN 2025 | BY JOHN DOE</span>
-              <h3 class="text-xl font-bold text-white">Edited Blog Example</h3>
-              <div class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
-                <p class="text-white text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et tempus blandit, metus mi consectetur felis turpis vitae ligula.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- "Blog Post 4" -->
-          <div class="bg-white cursor-pointer rounded-lg overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative group">
-            <!-- <img src="https://readymadeui.com/images/food.webp" alt="Blog Post 1" class="w-full h-96 object-cover" /> -->
-            <img src='<?= ROOT_DIR ?>assets/images/test-image.jpg' alt="Blog Post 1" class="w-full h-96 object-cover" />
-            <div class="p-6 absolute bottom-0 left-0 right-0 bg-black opacity-75">
-              <span class="text-sm block text-white mb-2">21 JAN 2025 | BY JOHN DOE</span>
-              <h3 class="text-xl font-bold text-white">Edited Blog Example</h3>
-              <div class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
-                <p class="text-white text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et tempus blandit, metus mi consectetur felis turpis vitae ligula.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- "Blog Post 5" -->
-          <div class="bg-white cursor-pointer rounded-lg overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative group">
-            <!-- <img src="https://readymadeui.com/images/food.webp" alt="Blog Post 1" class="w-full h-96 object-cover" /> -->
-            <img src='<?= ROOT_DIR ?>assets/images/test-image.jpg' alt="Blog Post 1" class="w-full h-96 object-cover" />
-            <div class="p-6 absolute bottom-0 left-0 right-0 bg-black opacity-75">
-              <span class="text-sm block text-white mb-2">21 JAN 2025 | BY JOHN DOE</span>
-              <h3 class="text-xl font-bold text-white">Edited Blog Example</h3>
-              <div class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
-                <p class="text-white text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et tempus blandit, metus mi consectetur felis turpis vitae ligula.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- "Blog Post 6" -->
-          <div class="bg-white cursor-pointer rounded-lg overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative group">
-            <!-- <img src="https://readymadeui.com/images/food.webp" alt="Blog Post 1" class="w-full h-96 object-cover" /> -->
-            <img src='<?= ROOT_DIR ?>assets/images/test-image.jpg' alt="Blog Post 1" class="w-full h-96 object-cover" />
-            <div class="p-6 absolute bottom-0 left-0 right-0 bg-black opacity-75">
-              <span class="text-sm block text-white mb-2">21 JAN 2025 | BY JOHN DOE</span>
-              <h3 class="text-xl font-bold text-white">Edited Blog Example</h3>
-              <div class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
-                <p class="text-white text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et tempus blandit, metus mi consectetur felis turpis vitae ligula.</p>
-              </div>
-            </div>
-          </div>
+          
 
         </div>
       </div>

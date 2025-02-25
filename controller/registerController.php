@@ -43,7 +43,7 @@ if ($stmt->num_rows > 0) {
     $stmt-> close();
 
     // Email doesn't exist. create new account
-    $stmt = $conn->prepare("INSERT INTO users (username, email, password_hash, created_at, role) VALUES (?, ?, ?, NOW(), user)");
+    $stmt = $conn->prepare("INSERT INTO users (username, email, password_hash, created_at, role) VALUES (?, ?, ?, NOW(), 'user')");
 
     // Hash the password for security
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
