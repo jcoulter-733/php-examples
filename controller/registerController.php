@@ -72,3 +72,8 @@ if ($stmt->num_rows > 0) {
 
 }
 ?>
+<!-- Status Message -->
+<?php if (isset($_SESSION['status_message'])) : ?>
+    <div><?= $_SESSION['status_message'] ?></div>
+<?php unset($_SESSION['status_message']) ?>
+<?php endif?>

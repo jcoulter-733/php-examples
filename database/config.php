@@ -1,6 +1,4 @@
 <?php
-
-
 $hn = "localhost";
 $un = "john_admin";
 $pw = "EJ5OUi)OTJQ[QSwr";
