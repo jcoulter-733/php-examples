@@ -1,6 +1,6 @@
 <?php
-include ROOT_PATH . 'database/config.php';
-include ROOT_PATH . 'components/header.php';
+include ROOT_DIR . 'database/config.php';
+include ROOT_DIR . 'components/header.php';
 ?>
 <div class="font-[sans-serif] max-sm:px-4">
   <div class="min-h-screen flex flex-col items-center justify-center">
@@ -71,5 +71,5 @@ include ROOT_PATH . 'components/header.php';
 </div>
 
 <?php
-include '../components/footer.php';
+include ROOT_DIR . 'components/footer.php';
 ?>

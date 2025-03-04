@@ -1,6 +1,3 @@
-<?php
-define('ROOT_DIR', '/johnc/php-examples/');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

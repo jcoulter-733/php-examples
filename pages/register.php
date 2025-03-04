@@ -1,6 +1,6 @@
 <?php
-include ROOT_PATH . 'database/config.php';
-include ROOT_PATH . 'components/header.php';
+include ROOT_DIR . 'database/config.php';
+include ROOT_DIR . 'components/header.php';
 
 ?>
 
@@ -76,5 +76,5 @@ include ROOT_PATH . 'components/header.php';
       </div>
     </div>
 <?php
-include '../components/footer.php';
+include ROOT_DIR . 'components/footer.php';
 ?>

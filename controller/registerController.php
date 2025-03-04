@@ -1,5 +1,6 @@
 <?php
-include '../database/config.php';
+include ROOT_DIR . 'database/config.php';
+
 session_start();
 
 // Input sanitization, taking away any spaces

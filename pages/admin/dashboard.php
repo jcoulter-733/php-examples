@@ -1,6 +1,6 @@
 <?php
-include ROOT_PATH . 'database/config.php';
-include ROOT_PATH . 'components/header.php';
+include ROOT_DIR . 'database/config.php';
+include ROOT_DIR . 'components/header.php';
 ?>
 <body class="bg-gray-100"> <!-- Change this to your desired Tailwind background color class -->
   <!-- Your content goes here -->
@@ -212,5 +212,5 @@ include ROOT_PATH . 'components/header.php';
   </div>
 </body>
 <?php
-include '../../components/footer.php';
+include ROOT_DIR . 'components/footer.php';
 ?>

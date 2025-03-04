@@ -1,6 +1,6 @@
 <?php
-include ROOT_PATH . 'database/config.php';
-include ROOT_PATH . 'components/header.php';
+include ROOT_DIR . 'database/config.php';
+include ROOT_DIR . 'components/header.php';
 
 $blog = $conn->prepare("SELECT blog_id, title, image, content, status FROM blogs WHERE status = 'published'");
 $blog->execute();
@@ -40,5 +40,5 @@ $blog->bind_result($id, $title, $image_url, $content, $status);
     
     
 <?php
-include '../components/footer.php';
+include ROOT_DIR . 'components/footer.php';
 ?>

@@ -1,6 +1,6 @@
 <?php
-include ROOT_PATH . 'database/config.php';
-include ROOT_PATH . 'components/header.php';
+include ROOT_DIR . 'database/config.php';
+include ROOT_DIR . 'components/header.php';
 $blog = $conn->prepare("SELECT blog_id, title, image, content, status, created_at FROM blogs WHERE status = 'published'");
 $blog->execute();
 $blog->store_result();
@@ -30,23 +30,30 @@ $blog->bind_result($id, $title, $image_url, $content, $status, $created_at);
 
         <!-- "Blog Posts" -->
         <?php while($blog->fetch()): ?>
-          <div class="bg-white cursor-pointer rounded-lg overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative group">         
-          <?php 
+  <div class="bg-white cursor-pointer rounded-lg overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative group">         
+    <?php 
+      // Format the date if $created_at is defined; otherwise, provide a fallback.
+      if (isset($created_at) && !empty($created_at)) {
           $date = new DateTime($created_at);
           $formattedDate = $date->format("F j, Y, g:i A");
-          ?>
-          
-            <img src='<?= ROOT_DIR ?>assets/images/<?= $image_url ?>' alt="test-image.jpg" class="w-full h-96 object-cover" />
-            <div class="p-6 absolute bottom-0 left-0 right-0 bg-black opacity-75">
-              <span class="text-sm block text-white mb-2"><?= $formattedDate ?> | BY JOHN DOE</span>
-              <h3 class="text-xl font-bold text-white"><?= $title ?></h3>
-              <div class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
-                <a href="pages/blog-info.php?bid=<?=$id?>" class="text-white text-sm">Read More</a>
-                <p class="text-white text-sm"><?= $content ?></p>
-              </div>
-            </div>
-          </div>
-          <?php endwhile; ?>
+      } else {
+          $formattedDate = 'Unknown Date';
+      }
+    ?>
+    
+    <img src="<?= BASE_URL ?>assets/images/<?= $image_url ?>" alt="<?= $title ?>" class="w-full h-96 object-cover" />
+    
+    <div class="p-6 absolute bottom-0 left-0 right-0 bg-black opacity-75">
+      <span class="text-sm block text-white mb-2"><?= $formattedDate ?> | BY JOHN DOE</span>
+      <h3 class="text-xl font-bold text-white"><?= $title ?></h3>
+      <div class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
+        <a href="<?= BASE_URL ?>pages/blog-info.php?bid=<?= $id ?>" class="text-white text-sm">Read More</a>
+        <p class="text-white text-sm"><?= $content ?></p>
+      </div>
+    </div>
+  </div>
+<?php endwhile; ?>
+
 
           
 
@@ -54,5 +61,5 @@ $blog->bind_result($id, $title, $image_url, $content, $status, $created_at);
       </div>
     </div>
 <?php
-include '../components/footer.php';
+include ROOT_DIR . 'components/footer.php';
 ?>
