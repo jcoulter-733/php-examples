@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Style Manipulation Example</title>
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="box"></div>
+  <button id="styleBtn">Change Style</button>
+
+ <!-- Javascript will go here -->
+  <script>
+
+    // Select the button and box div
+    const button = document.getElementById('styleBtn');
+    const box = document.getElementById('box');
+
+    // Add an event listener to the button
+    button.addEventListener('click', () => {
+      // Change the style of the box
+      box.style.backgroundColor = 'coral';
+      box.style.border = '7px solid red';
+      box.style.width = '400px';
+      box.style.height = '400px';
+      box.style.borderRadius = '75%';
+      box.style.transform = 'rotate(45deg)'; 
+        box.style.boxShadow = '10px 10px 20px rgba(0, 0, 0, 0.5)';
+        box.style.transition = 'all 3s ease'; // Add transition for smooth effect
+        box.style.opacity = '0.5'; // Change opacity
+      
+    });
+  </script>
+
+</body>
+</html>

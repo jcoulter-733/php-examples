@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>innerHTML with Event Listener</title>
+</head>
+<body>
+
+  <div id="content">This is the original content.</div>
+  <button id="updateBtn">Add Content</button>
+
+ <!-- Javascript will go here -->
+<script>
+
+    // Select the button and content div
+    const button = document.getElementById('updateBtn');
+    const contentDiv = document.getElementById('content');
+    
+    
+    // Add an event listener to the button
+    button.addEventListener('click', () => {
+        // Update the innerHTML of the content div
+        contentDiv.innerHTML = '<p>This is new content added to the div with innerHTML.</p>';
+        button.innerHTML = 'xxxxxx'; // Change button text
+    });
+</script>
+ 
+
+</body>
+</html>

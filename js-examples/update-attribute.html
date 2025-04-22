@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>setAttribute Example</title>
+</head>
+<body>
+
+<img id="myImage" src="https://placehold.co/600x400" alt="Placeholder">
+<br><br>
+<button id="changeBtn">Change Image</button>
+<button id="disableBtn">Disable This Button</button>
+<button id="changeBtn1" hidden>Change Image</button>
+
+
+ <!-- Javascript will go here -->
+  <script>
+    // Select the button and image
+    const changeButton = document.getElementById('changeBtn');
+    const disableButton = document.getElementById('disableBtn');
+    const changeButton1 = document.getElementById('changeBtn1');
+    const image = document.getElementById('myImage');
+
+    // Add an event listener to the change button
+    changeButton.addEventListener('click', () => {
+        // Change the src attribute of the image
+        image.setAttribute('src', '/assets/images/image1.jpg');
+        image.setAttribute('width', '600');
+        image.setAttribute('height', '400');
+        image.setAttribute('alt', 'Red Placeholder');
+        image.style.border = '5px solid red'; // Add a border to the image
+        image.style.borderRadius = '10px'; // Add rounded corners
+        image.style.boxShadow = '10px 10px 30px rgba(0, 0, 0, 1)'; // Add shadow
+        image.style.transition = 'transform 3s'; // Add transition for smooth effect  
+        changeButton1.setAttribute('hidden', false); // Show the change button
+    });
+
+    // Add an event listener to the disable button
+    disableButton.addEventListener('click', () => {
+        // Disable the change button
+        changeButton.setAttribute('disabled', true);
+        changeButton.textContent = 'Disabled'; // Change button text
+    });
+    changeButton1.addEventListener('click', () => {
+        // Disable the change button
+        
+        image.setAttribute('src', '/assets/images/image2.jpg');
+        image.setAttribute('width', '600');
+        image.setAttribute('height', '400');
+        image.setAttribute('alt', 'Red Placeholder');
+        image.style.border = '5px solid red'; // Add a border to the image
+        image.style.borderRadius = '10px'; // Add rounded corners
+        image.style.boxShadow = '10px 10px 30px rgba(0, 0, 0, 1)'; // Add shadow
+        image.style.transition = 'transform 3s'; // Add transition for smooth effect
+        changeButton.textContent = 'Disabled'; // Change button text
+        changeButton1.setAttribute('disabled', true);
+    });
+
+
+  </script>
+</body>
+</html>
